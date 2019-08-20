@@ -11,14 +11,14 @@ function createWindow() {
   mainWindow = new BrowserWindow({ width: 800, height: 600 })
 
   //加载应用----react 打包
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, './index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(__dirname, './index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
 
-  // 加载应用----适用于 react 项目
-  //mainWindow.loadURL('http://localhost:3000/');
+  //加载应用----适用于 react 项目
+  mainWindow.loadURL('http://localhost:3000/');
 
   // 打开开发者工具，默认不打开
   // mainWindow.webContents.openDevTools()
@@ -39,6 +39,7 @@ app.on('window-all-closed', function () {
     app.quit()
   }
 })
+
 
 app.on('activate', function () {
   // macOS中点击Dock图标时没有已打开的其余应用窗口时,则通常在应用中重建一个窗口
